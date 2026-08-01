@@ -7,7 +7,6 @@ export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
   const isProd = mode === 'production';
   return {
-    base: '/aeirmist/',
     plugins: [react(), tailwindcss()],
     define: {
     },
@@ -48,5 +47,6 @@ export default defineConfig(({mode}) => {
       // Disable file watching when DISABLE_HMR is true to save CPU during agent edits.
       watch: process.env.DISABLE_HMR === 'true' ? null : {},
     },
+    base: '/aeirmist/',
   };
 });
