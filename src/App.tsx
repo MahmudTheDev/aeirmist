@@ -2,7 +2,10 @@
  * @license
  * SPDX-License-Identifier: Apache-2.0
  */
-
+// import React from 'react'
+import ReactDOM from 'react-dom/client'
+// import { BrowserRouter } from 'react-router-dom'
+// import App from './App'
 import React, { useState, lazy, Suspense, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
@@ -20,6 +23,16 @@ import { AuthSystem } from './components/auth/AuthSystem';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { Sparkles, Zap, Lock, AlertCircle, Clock } from 'lucide-react';
 import { AeirmistLogo } from './components/ui/AeirmistLogo';
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    {/* ⬇️ এখানে basename যোগ করুন ⬇️ */}
+    <BrowserRouter basename="/aeirmist">
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>,
+)
+
 
 // Aeirmist Core Component Architecture
 function toMathBoldScript(text: string): string {
