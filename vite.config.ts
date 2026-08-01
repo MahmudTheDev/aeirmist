@@ -7,7 +7,7 @@ export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
   const isProd = mode === 'production';
   return {
-    base: '/',
+    base: '/aeirmist/',
     plugins: [react(), tailwindcss()],
     define: {
     },
